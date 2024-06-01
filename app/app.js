@@ -1,7 +1,7 @@
 /*var app = new Vue({
     el: '#app',
     data: {
-        titulo: 'Esta es mi primera vez en Vue',
+        titulo: 'Segunda ves en el local host',
         see: true,
         pollerias: [
             { nombre: 'Pardos' },
@@ -14,7 +14,7 @@
 var app = new Vue({
     el: '#app',
     data: {
-        titulo: 'Esta es mi primera vez en Vue',
+        titulo: 'Segunda vez en VUE',
         see: false,
         discotecas: [
             { 
