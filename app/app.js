@@ -14,7 +14,7 @@
 var app = new Vue({
     el: '#app',
     data: {
-        titulo: 'Cuarta vez en VUE',
+        titulo: 'Hola estoy usando VUE',
         see: false,
         discotecas: [
             { 
