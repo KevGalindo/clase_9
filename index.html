@@ -1,0 +1,115 @@
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">        
+        <meta name="description" content="">
+        <title>VUE JS UCH</title>
+        <link rel="stylesheet" href="app/css/css.css">        
+    </head>
+    <body>
+      <div id="app">
+        <h1>{{ titulo }}</h1>
+        <div v-if="see">
+             Usuario :Admind
+        </div>
+        <div>
+           <ul>
+             <li v-for="discoteca in discotecas" :key="discoteca.nombre" style="margin-bottom: 20px;">
+               <h2>{{ discoteca.nombre }}</h2>
+               <img :src="discoteca.imagen" alt="Imagen de {{ discoteca.nombre }}" style="width: 200px; height: auto;">
+               <p><strong>Descripción:</strong> {{ discoteca.descripcion }}</p>
+               <p><strong>Ubicación:</strong> {{ discoteca.ubicacion }}</p>
+             </li>
+           </ul>
+        </div>
+     <!-- CREAR UNA LISTA DE DISCTEOCAS CON IMAGEN, DESCRIPCION, UBICACION -->
+     <div>
+      <button v-on:click="showMessage">Mostrar Mensaje</button>
+ </div>
+ <div style="margin-top: 20px;">
+      <div class="input">
+          <label>Valor ideal</label>
+          <input v-model="valor1">
+          <p>{{ valor1 }}</p>
+      </div>
+ </div>
+ <div style="margin-top: 20px;">
+      <h2>Calculadora impuestos Vue.js</h2>
+      <div class="input">
+          <label>Venta</label>
+          <input v-model="venta">
+      </div>
+      <div class="input">
+          <label>Envio</label>
+          <input v-model="envio">
+      </div>
+      <div class="input">
+          <button v-on:click="calcularMonto">Calcular</button>
+      </div>
+      <hr>
+      <p>Subtotal: {{ subtotal }}</p>
+      <p>IGV: {{ impuestos }}</p>
+      <p>Total: {{ total }}</p>
+ </div>
+ <div style="margin-top: 20px;">
+      <h2>Calcula el precio</h2>
+      <p>Ingresa la cantidad de trago que necesitas para tu tono</p>
+      <div>
+          <label>Cervezas</label>
+          <input type="range" v-model="cerveza" min="0" max="10" step="1" v-on:change="calcularCerveza">
+          <p style="display: inline;">S/. {{ precios.cerveza }} por unidad</p>
+          <p style="display: inline;">Cantidad: {{ cerveza }}</p>
+          <p><b>S/. {{ costos.cerveza }}</b></p>
+      </div>
+      <div>
+          <label>Espumantes</label>
+          <input type="range" v-model="espumante" min="0" max="10" step="1" v-on:change="calcularEspumante">
+          <p style="display: inline;"> S/. {{ precios.espumante }} por unidad</p>
+          <p style="display: inline;">Cantidad: {{ espumante }}</p>
+          <p><b>S/. {{ costos.espumante }} </b></p>
+      </div>
+      <div>
+          <label>Vinos</label>
+          <input type="range" v-model="vino" min="0" max="10" step="1" v-on:change="calcularVino">
+          <p style="display: inline;"> S/. {{ precios.vino }} por unidad</p>
+          <p style="display: inline;">Cantidad: {{ vino }}</p>
+          <p><b>S/. {{ costos.vino }}</b></p>
+      </div>
+      <hr>
+      <div>
+          <p>Cantidad de botellas: {{ tragos.cantidad }}</p>
+          <p>Subtotal: {{ tragos.subtotal }}</p>
+          <p>IGV: {{ tragos.impuestos }}</p>
+          <p>Total: {{ tragos.total }}</p>
+      </div>
+ </div>
+ <div>
+ <h2>Calculadora de Promedio Ponderado</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Curso</th>
+                    <th>Nota</th>
+                    <th>Peso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(curso, index) in cursos" :key="index">
+                    <td>{{ curso.nombre }}</td>
+                    <td>
+                        <input type="number" v-model.number="curso.nota" min="0" max="20">
+                    </td>
+                    <td>
+                        <input type="number" v-model.number="curso.peso" min="1" max="100" step="0.1">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Promedio Ponderado: {{ promedioPonderado }}</p>
+  </div>
+</div>    
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app/app.js"></script>
+</html>
