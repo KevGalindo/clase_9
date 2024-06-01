@@ -20,7 +20,7 @@ var app = new Vue({
             { 
                 nombre: 'Discoteca El Duende Resto Lounge',
                 imagen: 'app/./assets/img/ElDuende.png', 
-                descripcion: 'Muy buena atención y excelente ambiente, la pase buenísimo, 100% recomendado con muy buenos tragos y excelente',
+                descripcion: 'Excelente ambiente, la pase buenísimo, 100% recomendado con muy buenos tragos y excelente',
                 ubicacion: 'Calle 123, Ciudad A'
             },
             { 
